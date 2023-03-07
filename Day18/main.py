@@ -25,15 +25,19 @@ pulled_colors = [(245, 243, 238), (246, 242, 244), (202, 164, 110), (240, 245, 2
                  (147, 17, 19), (27, 68, 102), (12, 70, 64), (107, 127, 153), (176, 192, 208), (168, 99, 102)]
 
 tim = t.Turtle()
-tim.home()
-homepoint = 0
-for _ in range (10)
+current_y = 0
+tim.hideturtle()
 
+for _ in range (10):
+    tim.penup()
+    tim.setpos(-250, current_y)
+    tim.pendown()
     for _ in range (10):
         tim.dot(20,random.choice(pulled_colors))
         tim.penup()
-        tim.forward(70)
+        tim.forward(50)
         tim.pendown()
+    current_y += 50
 
 
 
