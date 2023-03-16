@@ -1,21 +1,11 @@
 from turtle import Screen, Turtle
+from mysnake import Snake
 import time
 
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("Snake")
-
-starting =[(0, 0), (-20, 0), (-40, 0)]
-
-segments = []
-
-for position in starting:
-    segment = Turtle("square")
-    segment.color("white")
-    segment.penup()
-    segment.goto(position)
-    segments.append(segment)
 
 game_state = True
 
