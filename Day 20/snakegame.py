@@ -8,20 +8,22 @@ screen.bgcolor("black")
 screen.title("Snake")
 
 game_state = True
+snake = Snake()
 
-def up(segments):
-    current_pos=[]
-    heading = 0
-    for segment in segments:
-        if not current_pos:
-            segment.setheading(90)
-            segment.forward(20)
-            current_pos=[segment.xcor,segment.ycor]
-            set_heading
-        else:
-            segment.setpos(current_pos)
-            segment.setheading
-
+###This does not work
+# def up(segments):
+#     current_pos=[]
+#     heading = 0
+#     for segment in segments:
+#         if not current_pos:
+#             segment.setheading(90)
+#             segment.forward(20)
+#             current_pos=[segment.xcor,segment.ycor]
+#             set_heading
+#         else:
+#             segment.setpos(current_pos)
+#             segment.setheading
+#
 # def left(segments):
 #     catchup=0
 #     for segment in segments:
@@ -46,18 +48,18 @@ def up(segments):
 #         segment.forward(20)
 #         catchup+=20
 
+screen.listen()
+screen.onkey(snake.up, "Up")
+screen.onkey(snake.down, "Down")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.right, "Right")
+
+
 while game_state:
     screen.update()
     time.sleep(.1)
-    current_direction = "right"
-    new_direction = "right"
-    while new_direction == current_direction:
+    snake.move()
 
 
 screen.onkey()
-
-
-
-
-
 screen.exitonclick()
