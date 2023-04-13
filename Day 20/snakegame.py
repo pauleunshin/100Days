@@ -1,5 +1,7 @@
 from turtle import Screen, Turtle
 from mysnake import Snake
+from food import Food
+from scoreboard import Scoreboard
 import time
 
 screen = Screen()
@@ -9,6 +11,8 @@ screen.title("Snake")
 
 game_state = True
 snake = Snake()
+food = Food()
+scoreboard = Scoreboard()
 
 ###This does not work
 # def up(segments):
@@ -60,6 +64,9 @@ while game_state:
     time.sleep(.1)
     snake.move()
 
+    #Detect Collision with food
+    if snake.head.distance(food) < 15:
+        food.refresh()
 
 screen.onkey()
 screen.exitonclick()
